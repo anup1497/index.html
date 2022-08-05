@@ -1,0 +1,19 @@
+pipeline {
+agent {
+node {
+label "Dev"
+customWorkspace "/mnt/dev-project"
+}
+}
+stages {
+stage ("Git-clone") {
+steps {
+    sh "rm -rf *"
+git branch: 'dev', url: 'https://github.com/anup1497/index.html.git'
+
+}
+
+}
+
+}
+}
